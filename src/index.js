@@ -1,19 +1,34 @@
+let numbers;
+let plus1;
+let znak;
 function number1(){
-    var numbers = document.getElementById("numbers").value;
-    numbers = Number.parseInt(numbers);
-    return(numbers);
+    numbers = document.getElementById("numbers").value;
+    numbers = Number.parseFloat(numbers);
+    return numbers;
 }
-const plus = function(){
-    number1();
-    var plus1 = `${number1()}+`;
-    console.log(plus1);
+function plus(){
+    plus1 = number1();
+    znak = '+';
+}
+function minus(){
+    plus1 = number1();
+    znak = '-';
+}
+function multiply(){
+    plus1 = number1();
+    znak = '*';
+}
+function divide(){
+    plus1 = number1();
+    znak = '/';
 }
 document.getElementById("plus").addEventListener("click", plus);
-
+document.getElementById("minus").addEventListener("click", minus);
+document.getElementById("multiply").addEventListener("click", multiply);
+document.getElementById("divide").addEventListener("click", divide);
 function equal(){
-    console.log(plus1);
-    var number2 = number1();
-    var equally = `${plus}${number2}`;
+    let equally = eval(plus1 + znak + number1()); 
     console.log(equally);
-    return(equally);
+    return equally;
 }
+document.getElementById("equal").addEventListener("click", equal);
