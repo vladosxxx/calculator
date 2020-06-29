@@ -5,7 +5,7 @@ module.exports = {
   entry: { main: './src/index.js' },
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: '[name].[chunkhash].js'
+    filename: 'index.[chunkhash].js'
   },
   module: {
     rules: [
@@ -27,10 +27,8 @@ module.exports = {
     ]
   },
   plugins:[new HtmlWebpackPlugin({
-    inject: false,
-    hash: true,
     template: './src/index.html',
     filename: 'index.html'}
   ),
-    new ExtractTextPlugin({filename: 'style.[chunkhash].css', disable: false, allChunks: true})]
+    new ExtractTextPlugin({filename: 'style.[chunkhash].css'})]
 }
