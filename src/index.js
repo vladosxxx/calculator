@@ -1,4 +1,5 @@
 import './style.sass';
+mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 
 let numbers;
 let plus1;
@@ -9,7 +10,8 @@ function number1(){
     return numbers;
 }
 function eraseVal(){
-    document.getElementById("numbers").value = "";
+    document.getElementById('numbers').value = "";
+    document.getElementById('numbers').focus();
 }
 function plus(){
     plus1 = number1();

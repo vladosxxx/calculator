@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Material design -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <!-- Mterial icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Document</title>
-<link href="style.0069a8ead10033127a3b.css" rel="stylesheet"></head>
+<link href="style.7add9fca63bbdac40d13.css" rel="stylesheet"></head>
 <body>
     <!-- <form onsubmit="calc()"> -->
-        <div class="">
-        <p class="mdc-theme--on-primary">Введите число: </p>
-        <input type="text" id="numbers">
+        <div class="mdc-theme">
+        <!-- <p class="mdc-theme--on-primary">Введите число: </p> -->
+        <input class="mdc-text-field__lable" type="text" id="numbers">
         </div>
-        <button class="foo-button mdc-button"><input type="submit" value="+" id="plus"></button>
-        <button class="buttons"><input type="submit" value="-" id="minus"></button>
-        <button class="buttons"><input type="submit" value="*" id="multiply"></button>
-        <button class="buttons"><input type="submit" value="/" id="divide"></button>
-        <button class="buttons"><input type="submit" value="equal" id="equal"></button>
-
+        <button class="mdc-button--raised" id="plus">
+            <span class="mdc-button__label">+</span>
+        </button>
+        <button class="mdc-button--raised" id="minus">            
+            <span class="mdc-button__label">-</span>
+        </button>
+        <button class="mdc-button--raised" id="multiply">            
+            <span class="mdc-button__label">*</span>
+        </button>
+        <button class="mdc-button--raised" id="divide">            
+            <span class="mdc-button__label">/</span>
+        </button>
+        <button class="mdc-button--raised"><input type="submit" value="equal" id="equal"></button>
     <!-- </form> -->
-<script src="index.0069a8ead10033127a3b.js"></script></body>
+<script src="index.7add9fca63bbdac40d13.js"></script></body>
 </html>
