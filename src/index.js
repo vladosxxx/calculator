@@ -5,8 +5,13 @@ let numbers;
 let plus1;
 let znak;
 let inputField = document.getElementById("numbers")
+
 function number1(){
     numbers = inputField.value
+    if(numbers === "-")
+    {
+        return numbers = ''
+    }
     // numbers = parseFloat(numbers)
     return numbers
 }
@@ -15,19 +20,24 @@ function eraseVal(){
     inputField.focus();
 }
 function plus(){
-    plus1 = number1();
+    if(!znak){
+        plus1 = number1()
+    }
     znak = '+';
     eraseVal()
 }
 function minus(){
-    plus1 = number1()
+    if(!znak && !plus1 || plus1 == ''){
+        plus1 = number1()
+    }
     // if(znak === '+'){ //TODO put it to equal funct
     //     plus1 = "-" + number1()
     //     console.log(plus1)
     //     inputField.value = "-"
     // }
+    // }
     // else
-    if(!plus1){
+    if(!plus1 || plus1 === '' && !znak){
         inputField.value = "-"
     }
     else {
@@ -36,11 +46,16 @@ function minus(){
     }
 }
 function multiply(){
-    plus1 = number1();
+    if(!znak){
+        plus1 = number1()
+    }
     znak = '*';
     eraseVal()
 }
 function divide(){
+    if(!znak){
+        plus1 = number1()
+    }
     plus1 = number1();
     znak = '/';
     eraseVal()
@@ -67,10 +82,13 @@ document.getElementById('b0').addEventListener('click', () => calcField('0'))
 function equal(){
     console.log('plus1: ', plus1)
     console.log('znak: ', znak)
-
-    let equally = eval(plus1 + znak + number1());
+    let num2 = number1()
+    console.log('num2: ', num2)
+    let equally = eval(plus1 + znak + num2)
+    plus1 = ""
+    znak = ""
     console.log(equally)
-    inputField.value = equally;
-    return equally;
+    inputField.value = equally
+    return equally
 }
 document.getElementById("equal").addEventListener("click", equal);
