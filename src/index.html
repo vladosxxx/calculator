@@ -3,55 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Material design -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <!-- Mterial icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Document</title>
+    <title>Calculator</title>
 </head>
-<body class="mdc-typography mdc-theme--on-secondary">
+<body>
 
-    <div class="inputField">
-        <input class='mdc-text-field inputNumbers' type="text" id="numbers">
+<div class="inputField">
+    <input type="text" id="numbers">
+</div>
+<div class="allButtons">
+    <div class="firstLine">
+        <button id="c">
+            <span><p>C</p></span></button>
+        <br>
     </div>
-    <div class="allButtons">
-        <div class="firstLine">
-        <button class="foo-button mdc-button" id="b1">
-        <span class="mdc-button__ripple"><p><p>1</p></p></span></button>
-        <button class="foo-button mdc-button" id="b2">
-            <span class="mdc-button__ripple"><p>2</p></span></button>
-            <button class="foo-button mdc-button" id="b3">
-                <span class="mdc-button__ripple"><p>3</p></span></button>
-        <button class="foo-button mdc-button" id="plus">
-            <span class="mdc-button__ripple"><p>+</p></span></button>
+    <div class="firstLine">
+        <button id="b1">
+            1
+        </button>
+        <button id="b2">
+            2
+        </button>
+        <button id="b3">
+            3
+        </button>
+        <button id="plus">
+            +
+        </button>
     </div>
     <div class="secondLine">
-        <button class="foo-button mdc-button" id="b4">
-            <span class="mdc-button__ripple"><p>4</p></span></button>
-            <button class="foo-button mdc-button" id="b5">
-                <span class="mdc-button__ripple"><p>5</p></span></button>
-                <button class="foo-button mdc-button" id="b6">
-                    <span class="mdc-button__ripple"><p>6</p></span></button>
-        <button class="mdc-button foo-button" id="minus">
-        <span class="mdc-button__ripple"><p>-</p></span></button>
+        <button id="b4">
+            4
+        </button>
+        <button id="b5">
+            5
+        </button>
+        <button id="b6">
+            6
+        </button>
+        <button id="minus">
+            -
+        </button>
     </div>
     <div class="thirdLine">
-        <button class="foo-button mdc-button" id="b7">
-            <span class="mdc-button__ripple"><p>7</p></span></button>
-            <button class="foo-button mdc-button" id="b8">
-                <span class="mdc-button__ripple"><p>8</p></span></button>
-                <button class="foo-button mdc-button" id="b9">
-                    <span class="mdc-button__ripple"><p>9</p></span></button>
-        <button class="mdc-button foo-button" id="multiply">
-            <span class="mdc-button__ripple"><p>*</p></span></button>
-        </div>
-        <div class="fourLine">
-            <button class="foo-button mdc-button" id="b0">
-                <span class="mdc-button__ripple"><p>0</p></span></button>
-        <button class="mdc-button foo-button" id="divide">
-            <span class="mdc-button__ripple"><p>/</p></span></button>
-            <button class="mdc-button foo-button"><div id="equal"><span class="mdc-button__ripple"><p>=</p></span></div></button>
+        <button class="btn-1" id="b7">
+            7
+        </button>
+        <button id="b8">
+            8
+        </button>
+        <button id="b9">
+            9
+        </button>
+        <button id="multiply">
+            *
+        </button>
+    </div>
+    <div class="fourLine">
+        <button id="b0">
+            0
+        </button>
+        <button id="dot">
+            .
+        </button>
+        <button>
+            <div id="equal">=</div>
+        </button>
+        <button id="divide">
+            /
+        </button>
     </div>
 </div>
 </body>

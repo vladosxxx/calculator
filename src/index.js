@@ -1,9 +1,9 @@
 import './style.sass';
-mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
 
 let numbers;
 let plus1;
 let znak;
+let num2;
 let inputField = document.getElementById("numbers")
 
 function number1(){
@@ -12,7 +12,6 @@ function number1(){
     {
         return numbers = ''
     }
-    // numbers = parseFloat(numbers)
     return numbers
 }
 function eraseVal(){
@@ -30,13 +29,6 @@ function minus(){
     if(!znak && !plus1 || plus1 == ''){
         plus1 = number1()
     }
-    // if(znak === '+'){ //TODO put it to equal funct
-    //     plus1 = "-" + number1()
-    //     console.log(plus1)
-    //     inputField.value = "-"
-    // }
-    // }
-    // else
     if(!plus1 || plus1 === '' && !znak){
         inputField.value = "-"
     }
@@ -78,17 +70,27 @@ document.getElementById('b7').addEventListener('click', () => calcField('7'))
 document.getElementById('b8').addEventListener('click', () => calcField('8'))
 document.getElementById('b9').addEventListener('click', () => calcField('9'))
 document.getElementById('b0').addEventListener('click', () => calcField('0'))
+document.getElementById('dot').addEventListener('click', () => calcField('.'))
 
 function equal(){
     console.log('plus1: ', plus1)
     console.log('znak: ', znak)
-    let num2 = number1()
+    num2 = number1()
     console.log('num2: ', num2)
     let equally = eval(plus1 + znak + num2)
     plus1 = ""
     znak = ""
+    num2 = ""
     console.log(equally)
     inputField.value = equally
     return equally
 }
+function reloadAll(){
+    plus1 = ""
+    znak = ""
+    num2 = ""
+    inputField.value = "";
+    inputField.focus();
+}
+document.getElementById("c").addEventListener("click", reloadAll);
 document.getElementById("equal").addEventListener("click", equal);
