@@ -1,9 +1,7 @@
 import './style.sass';
 
-let numbers;
-let plus1;
-let znak;
-let num2;
+let numbers, num1, operation, num2
+
 let inputField = document.getElementById("numbers")
 
 function number1(){
@@ -19,37 +17,37 @@ function eraseVal(){
     inputField.focus();
 }
 function plus(){
-    if(!znak){
-        plus1 = number1()
+    if(!operation){
+        num1 = number1()
     }
-    znak = '+';
+    operation = '+';
     eraseVal()
 }
 function minus(){
-    if(!znak && !plus1 || plus1 == ''){
-        plus1 = number1()
+    if(!operation && !num1 || num1 === ''){
+        num1 = number1()
     }
-    if(!plus1 || plus1 === '' && !znak){
+    if(!num1 || num1 === '' && !operation){
         inputField.value = "-"
     }
     else {
-        znak = '-'
+        operation = '-'
         eraseVal()
     }
 }
 function multiply(){
-    if(!znak){
-        plus1 = number1()
+    if(!operation){
+        num1 = number1()
     }
-    znak = '*';
+    operation = '*';
     eraseVal()
 }
 function divide(){
-    if(!znak){
-        plus1 = number1()
+    if(!operation){
+        num1 = number1()
     }
-    plus1 = number1();
-    znak = '/';
+    num1 = number1();
+    operation = '/';
     eraseVal()
 }
 function calcField(numBut){
@@ -73,21 +71,21 @@ document.getElementById('b0').addEventListener('click', () => calcField('0'))
 document.getElementById('dot').addEventListener('click', () => calcField('.'))
 
 function equal(){
-    console.log('plus1: ', plus1)
-    console.log('znak: ', znak)
     num2 = number1()
-    console.log('num2: ', num2)
-    let equally = eval(plus1 + znak + num2)
-    plus1 = ""
-    znak = ""
-    num2 = ""
+    let equally = eval(num1 + operation + num2)
     console.log(equally)
     inputField.value = equally
+    if (equally === NaN || equally === undefined)
+    {
+        reloadAll()
+        return 'Error'
+    }
+    num1 = equally
     return equally
 }
 function reloadAll(){
-    plus1 = ""
-    znak = ""
+    num1 = ""
+    operation = ""
     num2 = ""
     inputField.value = "";
     inputField.focus();
