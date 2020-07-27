@@ -5,7 +5,7 @@ let numbers, num1, operation, num2
 let inputField = document.getElementById("numbers")
 
 function number1(){
-    numbers = inputField.value
+    numbers = parseFloat(inputField.value)
     if(numbers === "-")
     {
         return numbers = ''
@@ -46,8 +46,9 @@ function divide(){
     if(!operation){
         num1 = number1()
     }
-    num1 = number1();
-    operation = '/';
+    checkNumber(num1)
+    num1 = number1()
+    operation = '/'
     eraseVal()
 }
 function calcField(numBut){
@@ -74,6 +75,8 @@ function equal(){
     num2 = number1()
     let equally = eval(num1 + operation + num2)
     console.log(equally)
+    equally = equally.toFixed(15) // округляю до 15 знаков после запятой
+    equally = parseFloat(equally)
     inputField.value = equally
     if (equally === NaN || equally === undefined)
     {
